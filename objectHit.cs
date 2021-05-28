@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class objectHit : MonoBehaviour
+{
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if(collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Bumped into wall");
+            GetComponent<MeshRenderer>().material.color = Color.red;
+            gameObject.tag = "hit";
+        }
+    }
+}
